@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>
+
+ 	<filter>
+ 		<filter-name>test</filter-name>
+ 		<filter-class>servlet.LoginFilter</filter-class>
+ 	</filter>
+ 	<filter>
+ 		<filter-name>CharactorFilter</filter-name>
+ 		<filter-class>servlet.EncodingFilter</filter-class>
+ 		<init-param>
+ 			<param-name>encoding</param-name>
+ 			<param-value>UTF-8</param-value>
+ 		</init-param>
+ 	</filter>
+ 	
+ 	<filter>
+ 		<filter-name>permission</filter-name>
+ 		<filter-class>servlet.PermissionFilter</filter-class>
+ 	</filter>
+ 	
+ 	<filter-mapping>
+ 		<filter-name>permission</filter-name>
+ 		<url-pattern>/jsp/manager_update.jsp</url-pattern>
+ 	</filter-mapping>
+ 	<filter-mapping>
+ 		<filter-name>permission</filter-name>
+ 		<url-pattern>/jsp/manager_delete.jsp</url-pattern>
+ 	</filter-mapping>
+ 	<filter-mapping>
+ 		<filter-name>permission</filter-name>
+ 		<url-pattern>/jsp/manager_add.jsp</url-pattern>
+ 	</filter-mapping>
+ 	
+ 	<filter-mapping>
+ 		<filter-name>test</filter-name>
+ 		<url-pattern>/jsp/*</url-pattern>
+ 	</filter-mapping>
+ 	<filter-mapping>
+ 		<filter-name>CharactorFilter</filter-name>
+ 		<url-pattern>/*</url-pattern>
+ 	</filter-mapping>
+
+ 	
+ 
+ 
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>servlet.LoginServlet</servlet-class>
+	</servlet>
+  <servlet>
+    <servlet-name>AddAdminServlet</servlet-name>
+    <servlet-class>servlet.AddAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelAdminServlet</servlet-name>
+    <servlet-class>servlet.DelAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateAdminServlet</servlet-name>
+    <servlet-class>servlet.UpdateAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FindAdminServlet</servlet-name>
+    <servlet-class>servlet.FindAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowAllAdminServlet</servlet-name>
+    <servlet-class>servlet.ShowAllAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceAddServlet</servlet-name>
+    <servlet-class>servlet.SpaceAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceFind</servlet-name>
+    <servlet-class>servlet.SpaceFind</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceApply</servlet-name>
+    <servlet-class>servlet.SpaceApply</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceNotice</servlet-name>
+    <servlet-class>servlet.SpaceNotice</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaaceUpdataServ</servlet-name>
+    <servlet-class>servlet.SpaaceUpdataServ</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceRentFind</servlet-name>
+    <servlet-class>servlet.SpaceRentFind</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminUpdateTran</servlet-name>
+    <servlet-class>servlet.AdminUpdateTran</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceDelServlet</servlet-name>
+    <servlet-class>servlet.SpaceDelServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceUpdateTran</servlet-name>
+    <servlet-class>servlet.SpaceUpdateTran</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceUpdateServ</servlet-name>
+    <servlet-class>servlet.SpaceUpdateServ</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceRentDel</servlet-name>
+    <servlet-class>servlet.SpaceRentDel</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceRentFeeUpdate</servlet-name>
+    <servlet-class>servlet.SpaceRentFeeUpdate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentAdd</servlet-name>
+    <servlet-class>servlet.EquipmentAdd</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FindSpaceRent</servlet-name>
+    <servlet-class>servlet.FindSpaceRent</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SpaceClassFeeFind</servlet-name>
+    <servlet-class>servlet.SpaceClassFeeFind</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GameAdd</servlet-name>
+    <servlet-class>servlet.GameAdd</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GameFind</servlet-name>
+    <servlet-class>servlet.GameFind</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GameDel</servlet-name>
+    <servlet-class>servlet.GameDel</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GameUpdateTran</servlet-name>
+    <servlet-class>servlet.GameUpdateTran</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GameUpdate</servlet-name>
+    <servlet-class>servlet.GameUpdate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentFind</servlet-name>
+    <servlet-class>servlet.EquipmentFind</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentFind_2</servlet-name>
+    <servlet-class>servlet.EquipmentFind_2</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentDel</servlet-name>
+    <servlet-class>servlet.EquipmentDel</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentUpdatetran</servlet-name>
+    <servlet-class>servlet.EquipmentUpdatetran</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentUpdate</servlet-name>
+    <servlet-class>servlet.EquipmentUpdate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentRentAdd</servlet-name>
+    <servlet-class>servlet.EquipmentRentAdd</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentRnetFind</servlet-name>
+    <servlet-class>servlet.EquipmentRnetFind</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentRentFind</servlet-name>
+    <servlet-class>servlet.EquipmentRentFind</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentRentUpdate</servlet-name>
+    <servlet-class>servlet.EquipmentRentUpdate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentSetFee</servlet-name>
+    <servlet-class>servlet.EquipmentSetFee</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentFeeUpdate</servlet-name>
+    <servlet-class>servlet.EquipmentFeeUpdate</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipRentFind</servlet-name>
+    <servlet-class>servlet.EquipRentFind</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipmentRentDel</servlet-name>
+    <servlet-class>servlet.EquipmentRentDel</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EquipRentDel</servlet-name>
+    <servlet-class>servlet.EquipRentDel</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ReportServ</servlet-name>
+    <servlet-class>servlet.ReportServ</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ReportServ2</servlet-name>
+    <servlet-class>servlet.ReportServ2</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/servlet/LoginServlet</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddAdminServlet</servlet-name>
+    <url-pattern>/servlet/AddAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelAdminServlet</servlet-name>
+    <url-pattern>/servlet/DelAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateAdminServlet</servlet-name>
+    <url-pattern>/servlet/UpdateAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FindAdminServlet</servlet-name>
+    <url-pattern>/servlet/FindAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowAllAdminServlet</servlet-name>
+    <url-pattern>/servlet/ShowAllAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceAddServlet</servlet-name>
+    <url-pattern>/servlet/SpaceAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceFind</servlet-name>
+    <url-pattern>/servlet/SpaceFind</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceApply</servlet-name>
+    <url-pattern>/servlet/SpaceApply</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceNotice</servlet-name>
+    <url-pattern>/servlet/SpaceNotice</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaaceUpdataServ</servlet-name>
+    <url-pattern>/servlet/SpaaceUpdataServ</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceRentFind</servlet-name>
+    <url-pattern>/servlet/SpaceRentFind</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminUpdateTran</servlet-name>
+    <url-pattern>/servlet/AdminUpdateTran</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceDelServlet</servlet-name>
+    <url-pattern>/servlet/SpaceDelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceUpdateTran</servlet-name>
+    <url-pattern>/servlet/SpaceUpdateTran</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceUpdateServ</servlet-name>
+    <url-pattern>/servlet/SpaceUpdateServ</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceRentDel</servlet-name>
+    <url-pattern>/servlet/SpaceRentDel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceRentFeeUpdate</servlet-name>
+    <url-pattern>/servlet/SpaceRentFeeUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentAdd</servlet-name>
+    <url-pattern>/servlet/EquipmentAdd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FindSpaceRent</servlet-name>
+    <url-pattern>/servlet/FindSpaceRent</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpaceClassFeeFind</servlet-name>
+    <url-pattern>/servlet/SpaceClassFeeFind</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GameAdd</servlet-name>
+    <url-pattern>/servlet/GameAdd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GameFind</servlet-name>
+    <url-pattern>/servlet/GameFind</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GameDel</servlet-name>
+    <url-pattern>/servlet/GameDel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GameUpdateTran</servlet-name>
+    <url-pattern>/servlet/GameUpdateTran</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GameUpdate</servlet-name>
+    <url-pattern>/servlet/GameUpdate</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EquipmentFind_2</servlet-name>
+    <url-pattern>/servlet/EquipmentFind_2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentDel</servlet-name>
+    <url-pattern>/servlet/EquipmentDel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentUpdatetran</servlet-name>
+    <url-pattern>/servlet/EquipmentUpdatetran</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentUpdate</servlet-name>
+    <url-pattern>/servlet/EquipmentUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentRentAdd</servlet-name>
+    <url-pattern>/servlet/EquipmentRentAdd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentRnetFind</servlet-name>
+    <url-pattern>/servlet/EquipmentRnetFind</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentRentFind</servlet-name>
+    <url-pattern>/servlet/EquipmentRentFind</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentRentUpdate</servlet-name>
+    <url-pattern>/servlet/EquipmentRentUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentSetFee</servlet-name>
+    <url-pattern>/servlet/EquipmentSetFee</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentFeeUpdate</servlet-name>
+    <url-pattern>/servlet/EquipmentFeeUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipRentFind</servlet-name>
+    <url-pattern>/servlet/EquipRentFind</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipmentRentDel</servlet-name>
+    <url-pattern>/servlet/EquipmentRentDel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EquipRentDel</servlet-name>
+    <url-pattern>/servlet/EquipRentDel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReportServ</servlet-name>
+    <url-pattern>/servlet/ReportServ</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReportServ2</servlet-name>
+    <url-pattern>/servlet/ReportServ2</url-pattern>
+  </servlet-mapping>
+ 
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
